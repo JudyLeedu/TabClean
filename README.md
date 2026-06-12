@@ -4,6 +4,17 @@ A lightweight Chrome extension that helps you quickly understand, categorize, an
 
 ---
 
+## 🚀 Quick Start
+
+1. **Download the code** — Click the green **"Code"** button on this page, then **"Download ZIP"**
+2. **Extract** the zip file to a folder on your computer
+3. **Open Chrome**, go to `chrome://extensions/`
+4. **Turn on "Developer mode"** (top-right toggle)
+5. **Click "Load unpacked"** and select the folder you just extracted
+6. **Pin Tab Clean** to your toolbar — click the puzzle icon → find Tab Clean → click it!
+
+---
+
 ## ✨ Features
 
 - **Auto Categorization** — Smartly classifies tabs into Duplicates / Keep / Closeable
