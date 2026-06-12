@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Clean",
+  "version": "1.0.0",
+  "description": "快速理解、分类和整理当前已打开的所有标签页，降低标签管理的认知负担",
+  "permissions": ["tabs", "storage", "scripting", "sidePanel"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "打开 Tab Clean",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

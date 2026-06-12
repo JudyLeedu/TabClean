@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab Clean - 标签页整理</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- ==================== 页面1: 加载页 ==================== -->
+    <div id="loading-page" class="page active">
+      <header class="header">
+        <div class="logo-section">
+          <div class="logo-icon"><span class="dot-2"></span><span class="dot-3"></span></div>
+          <div class="title-text">
+            <h1>Tab Clean</h1>
+            <p>打开后做一次轻量整理</p>
+          </div>
+        </div>
+        <button class="close-btn" title="关闭">✕</button>
+      </header>
+
+      <div class="loading-section">
+        <div class="animation-container">
+          <!-- 掉落的卡片 -->
+          <div class="falling-card">Doc</div>
+          <div class="falling-card">Mail</div>
+          <div class="falling-card">Code</div>
+          
+          <!-- 蓝色盒子 -->
+          <div class="box-main">
+            <div class="box-top"></div>
+            <div class="box-eyes">
+              <div class="eye"></div>
+              <div class="eye"></div>
+            </div>
+            <div class="box-mouth"></div>
+          </div>
+          
+          <!-- 传送带 -->
+          <div class="conveyor-belt"></div>
+        </div>
+
+        <div class="loading-text">
+          <h2>正在帮你把散落的 tab 收一收</h2>
+        </div>
+
+        <div class="scan-status">
+          <div class="scan-dot"></div>
+          <span>扫描中...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 页面2: 结果页 ==================== -->
+    <div id="result-page" class="page">
+      <header class="header">
+        <div class="logo-section">
+          <div class="logo-icon"><span class="dot-2"></span><span class="dot-3"></span></div>
+          <div class="title-text">
+            <h1>Tab Clean</h1>
+            <p id="result-summary">本次扫描出 18 个 tab</p>
+          </div>
+        </div>
+        <button class="close-btn" title="关闭">✕</button>
+      </header>
+
+      <div class="result-section">
+        
+        <!-- 统计卡片区域 -->
+        <div class="stats-section">
+          <div class="stats-header">
+            <div class="stats-title">
+              <h3>整理结果</h3>
+              <p>先看清现状，再做一次轻量整理</p>
+            </div>
+            <button class="rescan-btn">重新扫描</button>
+          </div>
+          
+          <div class="stats-buttons">
+            <button class="stat-btn active" id="stat-btn-all" data-type="all">
+              <div class="stat-btn-text">全部 <span class="stat-btn-number" id="stat-total">18</span></div>
+            </button>
+            <button class="stat-btn" id="stat-btn-duplicates" data-type="duplicates">
+              <div class="stat-btn-text">重复项 <span class="stat-btn-number" id="stat-duplicate">8</span></div>
+            </button>
+            <button class="stat-btn" id="stat-btn-keep" data-type="keep">
+              <div class="stat-btn-text">先保留 <span class="stat-btn-number" id="stat-keep">5</span></div>
+            </button>
+            <button class="stat-btn" id="stat-btn-close" data-type="close">
+              <div class="stat-btn-text">可关闭 <span class="stat-btn-number" id="stat-close">5</span></div>
+            </button>
+          </div>
+        </div>
+
+        <!-- 重复项区域 -->
+        <div class="category-section" id="duplicates-section">
+          <div class="category-header">
+            <h3>重复项</h3>
+            <button class="category-action" id="one-click-slim">一键瘦身</button>
+          </div>
+          
+          <div id="duplicates-container">
+            <!-- 动态生成的重复项卡片 -->
+          </div>
+        </div>
+
+        <!-- 先保留区域 -->
+        <div class="category-section" id="keep-section">
+          <div class="category-header">
+            <h3>先保留</h3>
+          </div>
+          
+          <div id="keep-container">
+            <!-- 动态生成的保留分组 -->
+          </div>
+        </div>
+
+        <!-- 可关闭区域 -->
+        <div class="category-section" id="close-section">
+          <div class="category-header">
+            <h3>可关闭</h3>
+            <button class="category-action close-all-btn" data-action="close-all">一键关闭</button>
+          </div>
+          
+          <div id="close-container">
+            <!-- 动态生成的可关闭卡片 -->
+          </div>
+        </div>
+
+        <!-- Todo 区域 -->
+        <div class="category-section" id="todo-section">
+          <div class="category-header">
+            <h3>To do</h3>
+          </div>
+          
+          <div id="todo-container">
+            <!-- 动态生成的 Todo 卡片 -->
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- 先加载模拟数据，再加载核心逻辑 -->
+  <script src="mock.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
